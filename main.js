@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const randomQuote = require('./randomquote');
+
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -21,9 +22,10 @@ client.on('message', async (message) => {
     message.channel.send('pong!')
   }
   if (command === 'random') {
-    const quote = await randomQuote()
-    message.channel.send(quote)
+    const randoQuote = await randomQuote()
+    message.channel.send(randoQuote)
   }
+
 });
 
-client.login(process.env.DATABASE_URL);
+client.login(process.env.DISCORD_TOKEN);
