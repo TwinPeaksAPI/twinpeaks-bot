@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const randomQuote = require('./randomquote');
+const daleCooperQuote = require('./daleCooper');
 
 const dotenv = require('dotenv')
 dotenv.config()
@@ -25,6 +26,11 @@ client.on('message', async (message) => {
     const randoQuote = await randomQuote()
     message.channel.send(randoQuote)
   }
+  if (command === 'dale') {
+    const daleCooper = await daleCooperQuote()
+    message.channel.send(daleCooper)
+  }
+
 
 });
 
