@@ -11,7 +11,7 @@ dotenv.config()
 
 const client = new Discord.Client();
 
-const prefix = '-';
+const prefix = '!';
 
 client.once('ready', () => {
   console.log('Twin Peaks Bot is online!')
@@ -26,6 +26,11 @@ client.on('message', async (message) => {
   if (command === 'ping') {
     message.channel.send('pong!')
   }
+
+  if (command === 'characters') {
+    message.channel.send('Type one of these commands to get a random quote that includes that character: !dale, !gordon, !loglady, !laura, !thegiant, !sherifftruman')
+  }
+
   if (command === 'random') {
     const randoQuote = await randomQuote()
     message.channel.send(randoQuote)
