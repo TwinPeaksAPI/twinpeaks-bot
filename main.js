@@ -5,11 +5,15 @@ const logLadyQuote = require('./logLady');
 const laruaPalmerQuote = require('./lauraPalmer');
 const theGiantQuote = require('./theGiant');
 const sheriffTrumanQuote = require('./sheriffTruman');
+const makeUser = require('./makeUser');
+const addQuote = require('./addQuote');
 
 const dotenv = require('dotenv')
 dotenv.config()
 
 const client = new Discord.Client();
+
+const fetchUser = async id => client.users.fetch(id)
 
 const prefix = '-';
 
@@ -49,6 +53,18 @@ client.on('message', async (message) => {
   if (command === 'sherifftruman') {
     const sheriffTruman = await sheriffTrumanQuote()
     message.channel.send(sheriffTruman)
+  }
+  if (command === 'makeuser') {
+    const user = await makeUser(fetchUser)
+    message.channel.send(user)
+  }
+  if (command === 'addquote') {
+    const quoteToAdd = await addQuote(id)
+    message.channel.send(quoteToAdd)
+  }
+  if (command === 'getquotes') {
+    const quotesList = await getQuotes(id)
+    message.channel.send(quotesList)
   }
 
 });
