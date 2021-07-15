@@ -30,7 +30,22 @@ client.on('message', async (message) => {
     const daleCooper = await daleCooperQuote()
     message.channel.send(daleCooper)
   }
-
+  if (command === 'loglady') {
+    const logLady = await logLadyQuote()
+    message.channel.send(logLady)
+  }
+  if (command === 'laurapalmer') {
+    const lauraPalmer = await laruaPalmerQuote()
+    message.channel.send(lauraPalmer)
+  }
+  if (command === 'thegiant') {
+    const theGiant = await theGiantQuote()
+    message.channel.send(theGiant)
+  }
+  if (command === 'sherifftruman') {
+    const sheriffTruman = await sheriffTrumanQuote()
+    message.channel.send(sheriffTruman)
+  }
 
 });
 
