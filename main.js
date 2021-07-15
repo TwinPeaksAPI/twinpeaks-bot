@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const randomQuote = require('./randomquote');
 const daleCooperQuote = require('./daleCooper');
+const logLadyQuote = require('./logLady');
+const laruaPalmerQuote = require('./lauraPalmer');
+const theGiantQuote = require('./theGiant');
+const sheriffTrumanQuote = require('./sheriffTruman');
 
 const dotenv = require('dotenv')
 dotenv.config()
