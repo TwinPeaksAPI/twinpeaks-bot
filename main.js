@@ -42,23 +42,29 @@ client.on('message', async (message) => {
   }
   if (command === 'dale') {
     const daleCooper = await daleCooperQuote()
-    message.channel.send(daleCooper)
+    message.channel.send(daleCooper.quoteText)
+    lastQuote = daleCooper.id
   }
   if (command === 'loglady') {
     const logLady = await logLadyQuote()
-    message.channel.send(logLady)
+    message.channel.send(logLady.quoteText)
+    lastQuote = loglady.id
+
   }
   if (command === 'laurapalmer') {
     const lauraPalmer = await laruaPalmerQuote()
-    message.channel.send(lauraPalmer)
+    message.channel.send(lauraPalmer.quoteText)
+    lastQuote = lauraPalmer.id
   }
   if (command === 'thegiant') {
     const theGiant = await theGiantQuote()
-    message.channel.send(theGiant)
+    message.channel.send(theGiant.quoteText)
+    lastQuote = theGiant.id
   }
   if (command === 'sherifftruman') {
     const sheriffTruman = await sheriffTrumanQuote()
-    message.channel.send(sheriffTruman)
+    message.channel.send(sheriffTruman.quoteText)
+    lastQuote = sheriffTruman.id
   }
   if (command === 'makeuser') {
     const userId = message.author.id
@@ -78,6 +84,7 @@ client.on('message', async (message) => {
   if (command === 'getquotes') {
     const userId = message.author.id
     const quotesList = await getQuotes(userId)
+
     message.channel.send(quotesList)
   }
 
