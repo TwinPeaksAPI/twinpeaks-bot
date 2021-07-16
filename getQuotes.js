@@ -3,7 +3,7 @@ const axios = require('axios');
 async function getQuotes(id) {
   const response = await axios(`https://damp-cove-34137.herokuapp.com/api/users/${id}`)
 
-  const results = response.data;
+  const results = response.data.slice(0, 3);
 
   const quoteArray = results.map(quote => quote.quoteText + '----! End of Quote ----!')
 
