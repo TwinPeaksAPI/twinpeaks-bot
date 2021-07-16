@@ -5,7 +5,7 @@ async function getQuotes(id) {
 
   const results = response.data;
 
-  const quoteArray = results.map(quote => '----! Start of Quote ----!' + quote.quoteText + '----! End of Quote ----!')
+  const quoteArray = results.map(quote => quote.quoteText + '----! End of Quote ----!')
 
   return quoteArray
 }
